@@ -5,8 +5,8 @@ switch = ecs:new()
 
 -- create a basic ecs with required internal components
 function switch:new(case_table)
- 
-    object = object or {}
+
+    local object = {}
 
     setmetatable(object, self)
 
