@@ -28,4 +28,6 @@ function switch:match(case)
     if self.case_table[case] then
         self.case_table[case]()
     end
+
+    return self
 end
