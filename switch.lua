@@ -5,12 +5,12 @@ switch = {}
 function switch:new(case_table)
 
     local object = {}
+    
+    object.case_table = case_table
 
     setmetatable(object, self)
 
     self.__index = self
-
-    self.case_table = case_table
 
     return object
 end
