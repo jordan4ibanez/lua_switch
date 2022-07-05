@@ -22,11 +22,15 @@ function switch:new(case_table)
 end
 
 -- let the programmer actually use it during runtime for matching cases
-function switch:match(case)
+function switch:match(case, input_table)
 
     -- only check against existing entities
     if self.case_table[case] then
-        self.case_table[case]()
+        local data = self.case_table[case](input_table)
+        -- switch case will return self and data instead of just self
+        if data then
+            return self,data
+        end
     end
 
     return self
